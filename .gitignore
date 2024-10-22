@@ -1,0 +1,7 @@
+venv/
+.pytest_cache/
+.idea/
+*.egg-info/
+__pycache__/
+*.pyc
+docker-compose.override.yml

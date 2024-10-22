@@ -1,0 +1,18 @@
+services:
+  app:
+    build: .
+    container_name: image_duplicate_service
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+  tests:
+    build: .
+    container_name: image_duplicate_service_tests
+    command: ["pytest", "tests/test_api.py"]
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
